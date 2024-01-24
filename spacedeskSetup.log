@@ -1,0 +1,553 @@
+
+Call: 8/6/2023 14:32:7 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -preInstallCheck_W10
+ > ActionServiceUninstall spacedeskDisplayKmode
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskDisplayKmode!
+ > ActionServiceUninstall spacedeskDispKmode
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskDispKmode!
+=> LegacySetupUninstall
+ > ActionServiceUninstall spacedeskService
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskService!
+ > ActionServiceUninstall spacedeskHookKmode
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskHookKmode!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskService
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskHookKmode
+   ************************Uninstalling Bus driver...************************
+ > FunctionDriver::Uninstall Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:12
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverBus.inf
+ < InfFile::OemRemove spacedeskDriverBus.inf
+ > ActionServiceUninstall spacedeskDriverBus
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskDriverBus!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverBus
+ BusDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverBus.sys failed! 2
+   ************************Uninstalling legacy mouse driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_MOUSE_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:3
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskKtmInputmouse.inf
+ < InfFile::OemRemove spacedeskKtmInputmouse.inf
+ > ActionServiceUninstall spacedeskKtmInputMouse
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskKtmInputMouse!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskKtmInputMouse
+ KtmInputMouseDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskKtmInputMouse.sys failed! 2
+<= LegacySetupUninstall
+
+Call: 8/6/2023 14:32:9 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -qWaveCheck
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:9 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_android_control C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing Android Control driver...************************
+ > FunctionDriver::InstallOnRoot spacedesk Android Control
+   SetupApiDeviceInfoSet::CurrentInstanceDeviceNodeCreate ROOT\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_USB_ANDROID_0001
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverAndroidControl.inf
+ < FunctionDriver::Install Needs reboot:0
+ < FunctionDriver::InstallOnRoot
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:9 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_android_usb C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing Android USB driver...************************
+ > InfFile::OemCopy C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverAndroidUsb.inf
+ < InfFile::OemCopy C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverAndroidUsb.inf
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:10 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_ktm C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing legacy mouse driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskKtmInputmouse.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:10 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_hid C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing HID driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverHid.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:10 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_iddcx C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\ 0
+   ************************Installing Indirect Display driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskdisplay.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:11 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_audio C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing Audio driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverAudio.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:11 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_bus C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing Bus driver...************************
+ > FunctionDriver::InstallOnRoot spacedesk virtual Bus
+   SetupApiDeviceInfoSet::CurrentInstanceDeviceNodeCreate Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskDriverBus.inf
+ < FunctionDriver::Install Needs reboot:0
+ < FunctionDriver::InstallOnRoot
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:12 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -install_server C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   ************************Installing spacedesk service************************
+ > InfFile::SectionInstall C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskService.inf
+ < InfFile::SectionInstall DefaultInstall 128 C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\spacedeskService.inf
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:14 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -openFirewall
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:14 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -spacedeskProgramFilesDelete C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\
+   UtilFileEnumerator::Open FindFirstFile on C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\\v3DDNetService*.* failed! 2
+   UtilFileEnumerator::Open FindFirstFile on C:\Program Files\datronicsoft\spacedeskTemporarySetupFiles\\x86\spacedesk*.* failed! 3
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 8/6/2023 14:32:14 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -otherFirewallCheck
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:49 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -preUninstall_W10
+   Windows10SetupPreUninstall Utilities::ProcessFind failed! spacedeskConsole.exe
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:49 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_server
+   ************************Uninstalling spacedesk service...************************
+ > InfFile::OemRemove spacedeskService.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem53.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem53.inf
+ < InfFile::OemRemove spacedeskService.inf
+ > ActionServiceUninstall spacedeskService
+   ServiceManager::ServiceStop Service stopped after 0 tries.
+ < ActionServiceUninstall spacedeskService
+ Windows10ServiceUninstall DeleteFile \WINDOWS\System32\spacedeskService.exe failed! 2
+ Windows10ServiceUninstall DeleteFile \WINDOWS\System32\SpacedeskServiceTray.exe failed! 2
+ Windows10ServiceUninstall DeleteFile \WINDOWS\System32\spacedeskConsole.exe failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:51 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_android_control
+   ************************Uninstalling Android Control driver...************************
+ > FunctionDriver::Uninstall ROOT\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_USB_ANDROID_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId ROOT\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_USB_ANDROID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:17
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAndroidControl.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem46.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem46.inf
+ < InfFile::OemRemove spacedeskDriverAndroidControl.inf
+ > ActionServiceUninstall spacedeskDriverAndroidControl
+   ServiceManager::ServiceStop Service is already STOPPED
+ < ActionServiceUninstall spacedeskDriverAndroidControl
+ AndroidControlDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAndroidControl.sys failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:52 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_android_usb
+   ************************Uninstalling Android USB driver...************************
+ > FunctionDriver::Uninstall USB\VID_18D1&PID_2D01&MI_00
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:28
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAndroidUsb.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem47.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem47.inf
+ < InfFile::OemRemove spacedeskDriverAndroidUsb.inf
+ > ActionServiceUninstall spacedeskAndroidUsb
+   ServiceManager::ServiceOpen OpenService failed! 1060  Service does not exist.
+   ActionServiceUninstall: ServiceEnableAccess failed on spacedeskAndroidUsb!
+ AndroidUsbDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAndroidUsb.sys failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:52 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_audio
+   ************************Uninstalling Audio driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_RENDER
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_RENDER FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_CAPTURE
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_COMBINED_RENDER_CAPTURE
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAudio.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem51.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem51.inf
+ < InfFile::OemRemove spacedeskDriverAudio.inf
+ > ActionServiceUninstall spacedeskDriverAudio
+   ServiceManager::ServiceStop Service is already STOPPED
+ < ActionServiceUninstall spacedeskDriverAudio
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverAudio
+ AudioDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAudio.sys failed! 2
+ > Utilities::CleanupRogueAudioEndpoints spacedesk
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:7
+ < Utilities::CleanupRogueAudioEndpoints
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:54 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_iddcx
+   ************************Uninstalling Indirect Display driver...************************
+ > FunctionDriver::Uninstall VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_DISPLAY_0003
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_DISPLAY_0003 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_DISPLAY_0003
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskdisplay.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem50.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem50.inf
+ < InfFile::OemRemove spacedeskdisplay.inf
+ IndirectDisplayDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDisplayUmode1_0.dll failed! 2
+ IndirectDisplayDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDisplayUmode1_2.dll failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:54 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_hid
+   ************************Uninstalling HID driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:79
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverHid.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem49.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem49.inf
+ < InfFile::OemRemove spacedeskDriverHid.inf
+ HidDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDriverHid.dll failed! 2
+ > FunctionDriver::Uninstall HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:91
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:23
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:55 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_ktm
+   ************************Uninstalling legacy mouse driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_MOUSE_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_MOUSE_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskKtmInputmouse.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem48.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem48.inf
+ < InfFile::OemRemove spacedeskKtmInputmouse.inf
+ > ActionServiceUninstall spacedeskKtmInputMouse
+   ServiceManager::ServiceStop Service is already STOPPED
+ < ActionServiceUninstall spacedeskKtmInputMouse
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskKtmInputMouse
+ KtmInputMouseDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskKtmInputMouse.sys failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:10:56 Build: Apr 26 2023 14:29:31 v1067
+=> SpacedeskSetupCustomAction::_tWinMain -uninstall_bus
+   ************************Uninstalling Bus driver...************************
+ > FunctionDriver::Uninstall Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+SetupApiDeviceEnumerator::EnumerateNextByHardwareId Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001 FOUND!
+FunctionDriver::PrivateDevicesUninstall success!
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:16
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverBus.inf
+ > InfFile::SectionInstall C:\WINDOWS\INF\oem52.inf
+ < InfFile::SectionInstall DefaultUninstall 128 C:\WINDOWS\INF\oem52.inf
+ < InfFile::OemRemove spacedeskDriverBus.inf
+ > ActionServiceUninstall spacedeskDriverBus
+   ServiceManager::ServiceStop Service is already STOPPED
+ < ActionServiceUninstall spacedeskDriverBus
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverBus
+ BusDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverBus.sys failed! 2
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:1 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -preInstallCheck_W10
+ > ActionServiceUninstall spacedeskDisplayKmode
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDisplayKmode!
+ > ActionServiceUninstall spacedeskDispKmode
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDispKmode!
+=> Windows10SetupUninstall (Pre-install check OR Rollback)
+   Windows10SetupPreUninstall Utilities::ProcessFind failed! spacedeskConsole.exe
+   ************************Uninstalling spacedesk service...************************
+ > InfFile::OemRemove spacedeskService.inf
+ < InfFile::OemRemove spacedeskService.inf
+ > ActionServiceExists spacedeskService
+   ServiceManager::IsExisting OpenService failed! 1060 
+   ActionServiceExists failed on spacedeskService!
+   ************************Uninstalling Android Control driver...************************
+ > FunctionDriver::Uninstall ROOT\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_USB_ANDROID_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:16
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAndroidControl.inf
+ < InfFile::OemRemove spacedeskDriverAndroidControl.inf
+ > ActionServiceUninstall spacedeskDriverAndroidControl
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDriverAndroidControl!
+ AndroidControlDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAndroidControl.sys failed! 2
+   ************************Uninstalling Android USB driver...************************
+ > FunctionDriver::Uninstall USB\VID_18D1&PID_2D01&MI_00
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:28
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAndroidUsb.inf
+ < InfFile::OemRemove spacedeskDriverAndroidUsb.inf
+ > ActionServiceUninstall spacedeskAndroidUsb
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskAndroidUsb!
+ AndroidUsbDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAndroidUsb.sys failed! 2
+   ************************Uninstalling Audio driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_RENDER
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_CAPTURE
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_AUDIO_COMBINED_RENDER_CAPTURE
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverAudio.inf
+ < InfFile::OemRemove spacedeskDriverAudio.inf
+ > ActionServiceUninstall spacedeskDriverAudio
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDriverAudio!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverAudio
+ AudioDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverAudio.sys failed! 2
+ > Utilities::CleanupRogueAudioEndpoints spacedesk
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:7
+ < Utilities::CleanupRogueAudioEndpoints
+   ************************Uninstalling Indirect Display driver...************************
+ > FunctionDriver::Uninstall VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_DISPLAY_0003
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_DISPLAY_0003
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskdisplay.inf
+ < InfFile::OemRemove spacedeskdisplay.inf
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDisplayUmode
+ IndirectDisplayDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDisplayUmode1_0.dll failed! 2
+ IndirectDisplayDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDisplayUmode1_2.dll failed! 2
+   ************************Uninstalling HID driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:78
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverHid.inf
+ < InfFile::OemRemove spacedeskDriverHid.inf
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverHid
+ HidDriverUninstall DeleteFile \WINDOWS\System32\drivers\UMDF\spacedeskDriverHid.dll failed! 2
+ > FunctionDriver::Uninstall HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:91
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > FunctionDriver::Uninstall HID\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_HID_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:23
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+   ************************Uninstalling legacy mouse driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_MOUSE_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskKtmInputmouse.inf
+ < InfFile::OemRemove spacedeskKtmInputmouse.inf
+ > ActionServiceUninstall spacedeskKtmInputMouse
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskKtmInputMouse!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskKtmInputMouse
+ KtmInputMouseDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskKtmInputMouse.sys failed! 2
+   ************************Uninstalling Bus driver...************************
+ > FunctionDriver::Uninstall Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:16
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverBus.inf
+ < InfFile::OemRemove spacedeskDriverBus.inf
+ > ActionServiceUninstall spacedeskDriverBus
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDriverBus!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverBus
+ BusDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverBus.sys failed! 2
+<= Windows10SetupUninstall
+=> LegacySetupUninstall
+ > ActionServiceUninstall spacedeskService
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskService!
+ > ActionServiceUninstall spacedeskHookKmode
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskHookKmode!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskService
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskHookKmode
+   ************************Uninstalling Bus driver...************************
+ > FunctionDriver::Uninstall Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:16
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskDriverBus.inf
+ < InfFile::OemRemove spacedeskDriverBus.inf
+ > ActionServiceUninstall spacedeskDriverBus
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskDriverBus!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskDriverBus
+ BusDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskDriverBus.sys failed! 2
+   ************************Uninstalling legacy mouse driver...************************
+ > FunctionDriver::Uninstall {0511CEC1-0EB4-4ADE-9284-CD36606C3906}\VID_DATRONICSOFT&PID_SPACEDESK_VIRTUAL_MOUSE_0001
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:13
+   SetupApiDeviceInfoSet::DeviceInfoEnumerate no more items... Index:0
+ < FunctionDriver::Uninstall
+ > InfFile::OemRemove spacedeskKtmInputmouse.inf
+ < InfFile::OemRemove spacedeskKtmInputmouse.inf
+ > ActionServiceUninstall spacedeskKtmInputMouse
+   ServiceManager::Open OpenService failed! 1060 
+   Service does not exist.
+   ActionServiceUninstall: Open failed on spacedeskKtmInputMouse!
+   UtilRegistry::KeyDelete RegDeleteTree failed! 0x00000002 spacedeskKtmInputMouse
+ KtmInputMouseDriverUninstall DeleteFile \WINDOWS\System32\drivers\spacedeskKtmInputMouse.sys failed! 2
+<= LegacySetupUninstall
+
+Call: 1/9/2024 15:12:2 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -qWaveCheck
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:2 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_android_control C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing Android Control driver...************************
+ > FunctionDriver::InstallOnRoot spacedesk Android Control
+   SetupApiDeviceInfoSet::CurrentInstanceDeviceNodeCreate ROOT\VID_DATRONICSOFT_PID_SPACEDESK_DRIVER_USB_ANDROID_0001
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverAndroidControl.inf
+ < FunctionDriver::Install Needs reboot:0
+ > Utilities::ScanForHardwareChanges ROOT\SPACEDESK_ANDROID_CONTROL\0000
+ < Utilities::ScanForHardwareChanges
+ < FunctionDriver::InstallOnRoot
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:2 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_android_usb C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing Android USB driver...************************
+ > InfFile::OemCopy C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverAndroidUsb.inf
+ < InfFile::OemCopy C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverAndroidUsb.inf
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:2 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_ktm C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing legacy mouse driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskKtmInputmouse.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:3 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_hid C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing HID driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverHid.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:3 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_iddcx C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\ 0
+   ************************Installing Indirect Display driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskdisplay.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:4 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_audio C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing Audio driver...************************
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverAudio.inf
+ < FunctionDriver::Install Needs reboot:0
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:4 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_bus C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   ************************Installing Bus driver...************************
+ > FunctionDriver::InstallOnRoot spacedesk virtual Bus
+   SetupApiDeviceInfoSet::CurrentInstanceDeviceNodeCreate Root\VID_DATRONICSOFT_PID_SPACEDESK_VIRTUAL_BUS_0001
+ > FunctionDriver::Install C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\spacedeskDriverBus.inf
+ < FunctionDriver::Install Needs reboot:0
+ > Utilities::ScanForHardwareChanges ROOT\SPACEDESK_VIRTUAL_BUS\0000
+ < Utilities::ScanForHardwareChanges
+ < FunctionDriver::InstallOnRoot
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:5 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -install_server C:\Program Files\datronicsoft\spacedesk\
+   ************************Installing spacedesk service************************
+ > ActionServiceInstall spacedeskService
+   ServiceManager::Create spacedeskService "C:\Program Files\datronicsoft\spacedesk\spacedeskService.exe"
+ < ActionServiceInstall spacedeskService
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:5 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -openFirewall C:\Program Files\datronicsoft\spacedesk\
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:5 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -spacedeskProgramFilesDelete C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\
+   UtilFileEnumerator::Open FindFirstFile on C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\\v3DDNetService*.* failed! 2
+   UtilFileEnumerator::Open FindFirstFile on C:\Program Files\datronicsoft\spacedesk\spacedeskTemporarySetupFiles\\x86\spacedesk*.* failed! 3
+<= SpacedeskSetupCustomAction::_tWinMain
+
+Call: 1/9/2024 15:12:5 Build: Jan  8 2024 14:02:59 v2109
+=> SpacedeskSetupCustomAction::_tWinMain -otherFirewallCheck
+<= SpacedeskSetupCustomAction::_tWinMain
